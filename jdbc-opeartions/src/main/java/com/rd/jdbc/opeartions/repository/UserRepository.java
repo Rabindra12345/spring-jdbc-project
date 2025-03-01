@@ -15,8 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-//@JdbcRepository(dialect = Dialect.H2) // Example for a JDBC repository
-//@EnableJdbcRepositories(basePackageClasses = UserRepository.class)
 public abstract class UserRepository implements CrudRepository<User,String> {
 
      private final JdbcOperations jdbcOperations ;
