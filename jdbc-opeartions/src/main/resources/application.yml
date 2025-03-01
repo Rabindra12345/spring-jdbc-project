@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservices
+    username: root
+    password: password
+    driverClassName: org.postgresql.Driver
+    schema-generate: create
+
