@@ -71,7 +71,7 @@ public class RepositoryTest {
     }
 
     @Test
-    public void testCharAtUsingCharItself(){
+    public void generateRot13(){
         String randomString= """
                 hello rabindra how's everything man ? 
                 you've been progressing lately right ? 
