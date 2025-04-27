@@ -1,4 +1,4 @@
-package com.rd.jdbc.opeartions;
+package com.rd.jdbc.opeartions.service;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.BulkRequest;
 import co.elastic.clients.elasticsearch.core.BulkResponse;

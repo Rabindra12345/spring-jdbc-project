@@ -1,18 +1,12 @@
 package com.rd.jdbc.opeartions.controller;
 
-import co.elastic.clients.elasticsearch.core.SearchResponse;
-import co.elastic.clients.elasticsearch.core.search.Hit;
-import com.rd.jdbc.opeartions.UserAdditionService;
+import com.rd.jdbc.opeartions.service.UserAdditionService;
 import com.rd.jdbc.opeartions.models.User;
 import com.rd.jdbc.opeartions.repository.UserElasticsearchRepository;
 import com.rd.jdbc.opeartions.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("api/v1")
