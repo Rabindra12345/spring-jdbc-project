@@ -7,6 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 //@Enti
 //@Table(name = ="user",schema="public")
 //@Entity
+//@Document(indexName = "users")
 public class User {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,6 +27,12 @@ public class User {
     }
 
     public User() {
+    }
+
+    public User(String randomName, String randomEmail, String randomAbout) {
+        this.name = randomName;
+        this.email = randomEmail;
+        this.about = randomAbout;
     }
 
     public String getAbout() {

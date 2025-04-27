@@ -33,7 +33,21 @@
 <!--		<release.version>17</release.version>-->
 <!--		<record.builder.version>32</record.builder.version>-->
 	</properties>
+
+
 	<dependencies>
+		<dependency>
+			<groupId>co.elastic.clients</groupId>
+			<artifactId>elasticsearch-java</artifactId>
+			<version>8.12.2</version> <!-- Adjust based on your Elasticsearch version -->
+		</dependency>
+
+		<!-- If you need JSON processing -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
