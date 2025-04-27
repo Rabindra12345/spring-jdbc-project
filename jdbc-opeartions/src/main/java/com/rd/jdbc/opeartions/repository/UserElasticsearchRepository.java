@@ -45,16 +45,29 @@ public class UserElasticsearchRepository {
 //                                            .should(s1 -> s1.match(m -> m.field("name").query(keyword)))
 //                                            .should(s1 -> s1.match(m -> m.field("about").query(keyword)))
 //                                    )
+                                    //mathes docs that contain keyword anywhere in name or about field
                                             .bool(b -> b
-                                                    .should(s1 -> s1.wildcard(w -> w
-                                                            .field("name")
-                                                            .value("*" + keyword + "*")
-                                                    ))
-                                                    .should(s2 -> s2.wildcard(w -> w
-                                                            .field("about")
-                                                            .value("*" + keyword + "*")
-                                                    ))
+//                                                    .should(s1 -> s1.wildcard(w -> w
+//                                                            .field("name")
+//                                                            .value("*" + keyword + "*")
+//                                                    ))
+//                                                    .should(s2 -> s2.wildcard(w -> w
+//                                                            .field("about")
+//                                                            .value("*" + keyword + "*")
+//                                                    ))
+                                                        //IMPLEMENTING FUZZY SEARCH FOR MISSPELLED CORRECTIONS
+                                                            .should(s1 -> s1.fuzzy(f -> f
+                                                                    .field("name")
+                                                                    .value(keyword)
+                                                                    .fuzziness("AUTO")
+                                                            ))
+                                                            .should(s1 -> s1.fuzzy(f -> f
+                                                                    .field("about")
+                                                                    .value(keyword)
+                                                                    .fuzziness("AUTO")
+                                                            ))
                                             )
+
 
 //                                    .multiMatch(m -> m
 //                                            .fields("name", "about")
