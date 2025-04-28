@@ -31,9 +31,6 @@ public class UserElasticsearchRepository {
                             .index("users")
                             .from(from)
                             .size(size)
-                            .index("users")
-                            .from(from)
-                            .size(size)
                             .sort(so -> so
                                     .field(f -> f
                                             .field("email.keyword")
